@@ -190,7 +190,7 @@
     DDXMLElement *root  = [document rootElement];
     DDXMLNode *defaultNamespace = [root namespaceForPrefix:@""];
     defaultNamespace.name = @"default";
-    NSArray *metaNodes = [root nodesForXPath:@"//default:package/default:metadata" error:nil];
+    NSArray *metaNodes = [root nodesForXPath:@"//*[local-name(.) = 'package']/*[local-name(.) = 'metadata']" error:nil];
     
     if (metaNodes.count == 1)
     {
@@ -226,7 +226,7 @@
     DDXMLElement *root  = [document rootElement];
     DDXMLNode *defaultNamespace = [root namespaceForPrefix:@""];
     defaultNamespace.name = @"default";
-    NSArray *spineNodes = [root nodesForXPath:@"//default:package/default:spine" error:nil];
+    NSArray *spineNodes = [root nodesForXPath:@"//*[local-name(.) = 'package']/*[local-name(.) = 'spine']" error:nil];
     
     if (spineNodes.count == 1)
     {
@@ -265,7 +265,7 @@
     DDXMLElement *root  = [document rootElement];
     DDXMLNode *defaultNamespace = [root namespaceForPrefix:@""];
     defaultNamespace.name = @"default";
-    NSArray *manifestNodes = [root nodesForXPath:@"//default:package/default:manifest" error:nil];
+    NSArray *manifestNodes = [root nodesForXPath:@"//*[local-name(.) = 'package']/*[local-name(.) = 'manifest']" error:nil];
     
     if (manifestNodes.count == 1)
     {
@@ -310,7 +310,7 @@
     
     DDXMLNode *defaultNamespace = [root namespaceForPrefix:@""];
     defaultNamespace.name = @"default";
-    NSArray *guideNodes = [root nodesForXPath:@"//default:package/default:guide" error:nil];
+    NSArray *guideNodes = [root nodesForXPath:@"//*[local-name(.) = 'package']/*[local-name(.) = 'guide']" error:nil];
     
     if (guideNodes.count == 1)
     {
